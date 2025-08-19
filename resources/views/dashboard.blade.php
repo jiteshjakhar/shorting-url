@@ -55,7 +55,7 @@
                     @foreach($shortUrls as $url)
                         <tr>
                             <td>{{ $url->original_url }}</td>
-                            <td>{{ $url->short_code }}</td>
+                            <td><a href="{{ $url->original_url }}" target="_blank">{{ $url->short_code }}</a></td>
                             <td>{{ $url->created_at ? $url->created_at->format('d-m-Y') : 'Unknown' }}</td>
                         </tr>
                     @endforeach

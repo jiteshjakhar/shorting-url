@@ -50,6 +50,8 @@ php artisan db:seed --class=SuperAdminSeeder
 
 php artisan serve
 
+npm run dev
+
 ## Default super admin credentials 
 id: superadmin@example.com
 pw: 12345678

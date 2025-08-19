@@ -1,5 +1,16 @@
 <?php
 
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use function Pest\Laravel\seed;
+
+uses(TestCase::class, RefreshDatabase::class)->in('Feature');
+
+beforeEach(function () {
+    $this->artisan('migrate');
+    $this->seed(SuperAdminSeeder::class);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -11,9 +22,9 @@
 |
 */
 
-pest()->extend(Tests\TestCase::class)
-    ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
+//pest()->extend(Tests\TestCase::class)
+    //->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+    //->in('Feature');
 
 /*
 |--------------------------------------------------------------------------
